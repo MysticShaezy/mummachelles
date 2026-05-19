@@ -1,0 +1,16 @@
+export const ROUTES = [
+  "/",
+  "/about",
+  "/contact",
+  "/resources",
+  "/wellbeing",
+  "/wellbeing/daily-rituals",
+  "/wellbeing/nourish",
+  "/wellbeing/restore",
+  "/sensory-insights",
+  "/members",
+  "/terms",
+  "/privacy",
+  "/books",
+  "/toys",
+] as const;

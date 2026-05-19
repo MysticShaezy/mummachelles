@@ -1,0 +1,153 @@
+# Mumma Chelles - Cursor Project Rules
+
+## PROJECT IDENTITY
+- **Client:** Michelle Thomas (Mumma Chelle)
+- **Domain:** mummachelles.com.au
+- **Purpose:** Curated resource hub for book, toy, and educational recommendations targeting educators, carers, homeschoolers, and parents
+- **Revenue:** Amazon Associates AU (tracking ID: mummachelles2-22) + Nu Skin wellbeing products
+
+## ARCHITECTURE
+Hybrid: Next.js on Vercel (static pages) + WordPress on Hostinger (Amazon affiliate content via AAWP plugin). Vercel rewrite proxy connects both under one domain.
+
+Next.js handles: /, /about, /contact, /resources, /wellbeing/*, /sensory-insights, /terms, /privacy, /members
+WordPress handles (via Vercel rewrites): /toys, /books, /blog/*
+
+## TECH STACK
+- Next.js 14+ with App Router
+- TypeScript
+- Tailwind CSS v3
+- Framer Motion (animations)
+- Lucide React (icons)
+- Google Fonts: Playfair Display (headings), Lato (body), Dancing Script (logo only)
+
+## BRAND TOKENS
+
+```css
+--bg: #fdf5f5           /* Blush background */
+--plum: #3d1a2e         /* Primary - headings, nav, footer */
+--pink-hot: #c9699a     /* Accent - buttons, links, highlights */
+--pink-soft: #e8b4c8    /* Borders, subtle accents */
+--pink-pale: #f9edf3    /* Light background alternating sections */
+--gold: #a07850          /* Tags, labels, category badges */
+--text: #1a1a1a          /* Body text */
+--text-muted: #666666   /* Secondary text */
+--white: #ffffff         /* Cards, overlays */
+```
+
+## TAILWIND CONFIG
+```js
+colors: {
+  plum: '#3d1a2e',
+  'pink-hot': '#c9699a',
+  'pink-soft': '#e8b4c8',
+  'pink-pale': '#f9edf3',
+  blush: '#fdf5f5',
+  gold: '#a07850',
+},
+fontFamily: {
+  display: ['Playfair Display', 'serif'],
+  body: ['Lato', 'sans-serif'],
+  logo: ['Dancing Script', 'cursive'],
+},
+```
+
+## DESIGN DIRECTION
+Warm, nurturing, professional. "Curated boutique" feel, NOT corporate.
+- Smooth scroll-triggered fade-in animations on sections (Framer Motion)
+- Card hover effects: subtle lift + shadow transition
+- Sticky header: transparent at top, solid plum on scroll
+- Mobile nav: slide-out drawer (not dropdown)
+- Rounded corners on cards (rounded-2xl)
+- Micro-interactions on buttons (scale on hover)
+- Alternating section backgrounds: blush (#fdf5f5) and pink-pale (#f9edf3)
+- Generous whitespace between sections
+
+## SPACING CONVENTIONS
+- Section padding: py-16 md:py-24
+- Card padding: p-6 md:p-8
+- Component gap: gap-6 md:gap-8
+- Max content width: max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
+- Border radius on cards: rounded-2xl
+
+## COMPONENT NAMING
+Use PascalCase. All shared components in /components/:
+- layout/: Header, Footer, MobileNav, PageWrapper
+- ui/: Button, Card, CategoryCard, Badge, SectionHeading, HeroBanner, ResourceCard, ProductCard
+- forms/: ContactForm, NewsletterForm
+- sections/: BookCategories, ToyShowcase, FreeResources, SensoryInsights, ContactCTA, NewsletterBanner
+- seo/: JsonLd, MetaTags
+
+## CONTENT RULES
+- Tagline: "Books to Cherish. Toys to Love. Resources to Nourish."
+- Footer credit: "Web Design by Limitless Creations AI" linked to https://limitlesscreations.ai
+- Affiliate disclosure (on Amazon pages): "As an Amazon Associate I earn from qualifying purchases. This helps me to continue to create resources and content."
+- NEVER use em dashes in any text content. Use hyphens, commas, or colons instead.
+
+## NAVIGATION ITEMS
+HOME, ABOUT, BOOKS, TOYS, RESOURCES, WELLBEING (dropdown: Feel Calm, Night Time, Y-Span), SENSORY INSIGHTS, BLOG, CONTACT
+Members Login as ghost button (links to /members coming soon page)
+
+## SOCIAL LINKS
+- Facebook: facebook.com/MummaChelles
+- Instagram: instagram.com/mummachelles
+- LinkedIn: linkedin.com/in/michellethomas-mummachelles
+- Spotify: open.spotify.com/playlist/1Rno9tY5Ib76MZ71xXk04r (display as Spotify favicon icon alongside social icons)
+
+## ENVIRONMENT VARIABLES
+```
+NEXT_PUBLIC_WP_API_URL=https://wp.mummachelles.com.au/wp-json/wp/v2
+```
+
+## VERCEL REWRITES (next.config.ts)
+```typescript
+async rewrites() {
+  return [
+    { source: '/toys', destination: 'https://wp.mummachelles.com.au/toys' },
+    { source: '/toys/:path*', destination: 'https://wp.mummachelles.com.au/toys/:path*' },
+    { source: '/books', destination: 'https://wp.mummachelles.com.au/books' },
+    { source: '/books/:path*', destination: 'https://wp.mummachelles.com.au/books/:path*' },
+    { source: '/blog', destination: 'https://wp.mummachelles.com.au/blog' },
+    { source: '/blog/:path*', destination: 'https://wp.mummachelles.com.au/blog/:path*' },
+  ];
+},
+```
+
+## IMAGE HANDLING
+- Use Next.js Image component with placeholder="blur" where possible
+- All images go in /public/images/ organised by page
+- Placeholder images will be replaced with Michelle's professional photography
+- NEVER self-host Amazon product images. All Amazon images handled by AAWP in WordPress only.
+
+## FILE STRUCTURE
+```
+mumma-chelles/
+├── app/
+│   ├── layout.tsx          # Root layout with fonts, metadata
+│   ├── page.tsx            # Home page
+│   ├── about/page.tsx
+│   ├── contact/page.tsx
+│   ├── resources/page.tsx
+│   ├── wellbeing/
+│   │   ├── page.tsx        # Hub page
+│   │   ├── feel-calm/page.tsx
+│   │   ├── night-time/page.tsx
+│   │   └── y-span/page.tsx
+│   ├── sensory-insights/page.tsx
+│   ├── members/page.tsx
+│   ├── terms/page.tsx
+│   └── privacy/page.tsx
+├── components/
+│   ├── layout/
+│   ├── ui/
+│   ├── forms/
+│   ├── sections/
+│   ├── icons/
+│   └── seo/
+├── lib/
+│   └── utils.ts
+├── public/
+│   └── images/
+├── tailwind.config.ts
+├── next.config.ts
+└── .env.local
+```

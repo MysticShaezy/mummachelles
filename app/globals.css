@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+
+:root {
+  --background: #fdf5f5;
+  --foreground: #3d1a2e;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #fdf5f5;
+    --foreground: #3d1a2e;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: smooth;
+  }
+
+  :focus {
+    outline: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid #e34d7c;
+    outline-offset: 2px;
+  }
+
+  html {
+    color-scheme: light;
+  }
+}
