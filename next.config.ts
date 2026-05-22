@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
     ],
   },
   async rewrites() {
+    const WP_STAGING = "https://mediumturquoise-heron-953818.hostingersite.com";
     return [
       { source: "/wp-admin/:path*", destination: `${WP_ORIGIN}/wp-admin/:path*` },
       { source: "/wp-content/:path*", destination: `${WP_ORIGIN}/wp-content/:path*` },
@@ -20,6 +21,11 @@ const nextConfig: NextConfig = {
       { source: "/blog/:path*", destination: `${WP_ORIGIN}/blog/:path*` },
       { source: "/product/:path*", destination: `${WP_ORIGIN}/product/:path*` },
       { source: "/shop/:path*", destination: `${WP_ORIGIN}/shop/:path*` },
+      { source: "/toys", destination: `${WP_STAGING}/toys` },
+      {
+        source: "/toys/:path*",
+        destination: `${WP_STAGING}/toys/:path*`,
+      },
     ];
   },
 };
