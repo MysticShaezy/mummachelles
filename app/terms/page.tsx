@@ -244,6 +244,20 @@ export default function TermsPage() {
           </p>
         </div>
       </section>
+
+      <section className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 bg-blush py-16 text-center">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <Link
+            href="/"
+            className="inline-flex rounded-full bg-pink-hot px-8 py-3 text-sm font-semibold uppercase tracking-wide text-white transition hover:bg-[#cf3f6f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot focus-visible:ring-offset-2 focus-visible:ring-offset-blush"
+          >
+            Back to Home
+          </Link>
+          <p className="mt-6 text-sm text-muted">
+            Questions? Contact us at michelle@mummachelles.au
+          </p>
+        </div>
+      </section>
     </>
   );
 }

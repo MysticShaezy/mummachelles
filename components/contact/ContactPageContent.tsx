@@ -2,11 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Home, Mail } from "lucide-react";
-import {
-  BeeDecoration,
-  DottedTrail,
-  HeartFloat,
-} from "@/components/home/decorative";
+import { DottedTrail, HeartFloat } from "@/components/home/decorative";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { SiteSocialIconButtons } from "@/components/icons/SocialIcons";
 import { InViewSection } from "@/components/sections/InViewSection";
@@ -128,18 +124,6 @@ export function ContactPageContent() {
               </div>
 
               <div className="relative">
-                <motion.div
-                  className="pointer-events-none absolute -right-2 -top-6 z-20 md:right-4 md:top-2"
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 0.45,
-                  }}
-                >
-                  <BeeDecoration className="size-16 opacity-90 drop-shadow-sm md:size-[4.5rem]" />
-                </motion.div>
                 <DottedTrail className="pointer-events-none absolute -right-4 top-16 z-0 w-36 rotate-[18deg] opacity-55 md:right-8 md:top-24 md:w-44" />
 
                 <ContactForm />

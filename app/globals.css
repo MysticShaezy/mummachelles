@@ -43,3 +43,66 @@ body {
     color-scheme: light;
   }
 }
+
+/* WordPress AAWP product embeds (books page) */
+.wp-aawp-content .aawp-product {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #f3c2d4;
+  background: #fdf5f5;
+}
+
+.wp-aawp-content .aawp-product__thumb {
+  flex-shrink: 0;
+}
+
+.wp-aawp-content .aawp-product__image {
+  max-width: 120px;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.wp-aawp-content .aawp-product__content {
+  flex: 1;
+  min-width: 12rem;
+}
+
+.wp-aawp-content .aawp-product__title {
+  display: block;
+  font-weight: 600;
+  color: #3d1a2e;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.wp-aawp-content .aawp-product__price {
+  color: #3d1a2e;
+  font-weight: 600;
+}
+
+.wp-aawp-content .aawp-product__buttons a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  background: #e34d7c;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.wp-aawp-content .aawp-product__ribbon {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #a07850;
+}
+
+.wp-aawp-content p:empty {
+  display: none;
+}

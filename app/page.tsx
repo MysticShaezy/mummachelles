@@ -93,13 +93,12 @@ export default function HomePage() {
           <InViewSection className="relative flex min-h-screen flex-col pb-24 md:pb-28">
             <Inner className="flex w-full flex-1 flex-col justify-center py-6 md:py-10">
               <div className="relative grid gap-12 lg:grid-cols-2 lg:items-center">
-                <BeeDecoration className="pointer-events-none absolute bottom-6 left-2 size-16 opacity-90 md:bottom-10 md:size-20" />
                 <div className="pointer-events-none absolute right-4 top-8 flex gap-2 md:right-10 md:top-12 lg:top-16">
                   <HeartFloat className="size-8 md:size-10" />
                   <HeartFloat className="size-6 translate-y-4 md:size-8" />
                 </div>
                 <div className="relative z-[1] space-y-8">
-                  <p className="font-display text-lg italic text-gold md:text-xl">
+                  <p className="font-display text-lg italic text-pink-hot [text-shadow:0_1px_8px_rgba(61,26,46,0.45)] md:text-xl">
                     Books to Cherish · Toys to Love · Resources to Nourish
                   </p>
                   <h1 className="font-display text-4xl leading-tight text-plum md:text-5xl lg:text-[3.25rem]">

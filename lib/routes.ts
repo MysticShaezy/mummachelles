@@ -11,6 +11,7 @@ export const ROUTES = [
   "/members",
   "/terms",
   "/privacy",
+  "/blog",
   "/books",
   "/toys",
 ] as const;

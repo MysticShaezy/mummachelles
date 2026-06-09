@@ -4,7 +4,6 @@ import {
   Blocks,
   BookOpen,
   FolderOpen,
-  Heart,
   MessageSquare,
   Users,
 } from "lucide-react";
@@ -107,7 +106,7 @@ export default function AboutPage() {
                     families, and educators.
                   </p>
                   <p>
-                    With over 35 years&apos; experience in special education,
+                    With over 36 years&apos; experience in special education,
                     family support, and complex care supports. I&apos;ve built a
                     career around connection, compassion, and community.
                   </p>
@@ -155,7 +154,7 @@ export default function AboutPage() {
                 emotionally resilient children through:
               </p>
             </div>
-            <div className="grid gap-6 sm:grid-cols-2">
+            <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
               <article className={liftCard}>
                 <MessageSquare
                   className="size-10 text-pink-hot"
@@ -199,21 +198,6 @@ export default function AboutPage() {
                   Bespoke training for early childhood centres, schools, and
                   community services, with a focus on trauma-aware,
                   relationship-based practice.
-                </p>
-              </article>
-              <article className={liftCard}>
-                <Heart
-                  className="size-10 text-pink-hot"
-                  strokeWidth={1.6}
-                  aria-hidden
-                />
-                <h3 className="font-display text-xl text-plum md:text-2xl">
-                  Mentoring & Support
-                </h3>
-                <p className="flex-1 text-muted">
-                  One-on-one and group mentoring for parents, carers, and
-                  educators needing guidance with the tough stuff - big emotions,
-                  tricky behaviours, and everything in between.
                 </p>
               </article>
             </div>
