@@ -181,11 +181,11 @@ function MobileWellbeingNav({
   const hubActive = pathname.startsWith(item.href);
 
   return (
-    <div className="overflow-hidden rounded-xl border border-pink-soft">
+    <div className="overflow-hidden rounded-xl">
       <button
         type="button"
-        className={`flex w-full items-center justify-between px-4 py-3 text-left text-sm font-semibold uppercase tracking-wide transition hover:bg-pink-pale focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot focus-visible:ring-offset-2 focus-visible:ring-offset-blush ${
-          hubActive ? "bg-plum text-blush hover:bg-plum" : "text-plum"
+        className={`flex w-full items-center justify-between px-4 py-3 text-left text-sm font-semibold uppercase tracking-wide transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot focus-visible:ring-offset-2 focus-visible:ring-offset-blush ${
+          hubActive ? "bg-plum text-blush shadow-md hover:bg-plum" : "bg-plum/90 text-blush hover:bg-plum"
         }`}
         aria-expanded={expanded}
         onClick={() => setExpanded((e) => !e)}
@@ -266,10 +266,10 @@ function MobileAccordion({
           <Link
             key={item.label}
             href={item.href}
-            className={`block rounded-xl border border-transparent px-4 py-3 text-sm font-semibold tracking-wide uppercase ${
+            className={`block rounded-xl px-4 py-3 text-sm font-semibold tracking-wide uppercase ${
               matchesPath(pathname, item.href)
-                ? "bg-plum text-blush"
-                : "border-pink-soft text-plum hover:bg-pink-pale"
+                ? "bg-plum text-blush shadow-md"
+                : "bg-plum/90 text-blush hover:bg-plum"
             }`}
           >
             {item.label}

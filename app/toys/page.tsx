@@ -78,17 +78,6 @@ export default async function ToysPage() {
         <InViewSection className="relative pt-24 pb-16 md:pt-28 md:pb-20">
           <Inner>
             <div className="mx-auto max-w-3xl space-y-8">
-              <div className="overflow-hidden rounded-2xl shadow-lg ring-2 ring-pink-soft/40">
-                <CldImage
-                  src={IMAGES.toys.hero}
-                  alt="Quality toys for playful learning"
-                  width={1200}
-                  height={675}
-                  className="aspect-video w-full object-cover"
-                  sizes="(max-width: 1024px) 92vw, 56rem"
-                  priority
-                />
-              </div>
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold md:text-sm">
                 Toy Recommendations
               </p>
@@ -101,6 +90,17 @@ export default async function ToysPage() {
                 inspire creativity, support development, and bring endless joy to
                 curious minds.
               </p>
+              <div className="overflow-hidden rounded-2xl shadow-lg ring-2 ring-pink-soft/40">
+                <CldImage
+                  src={IMAGES.toys.hero}
+                  alt="Quality toys for playful learning"
+                  width={1200}
+                  height={675}
+                  className="aspect-video w-full object-cover"
+                  sizes="(max-width: 1024px) 92vw, 56rem"
+                  priority
+                />
+              </div>
             </div>
           </Inner>
         </InViewSection>
