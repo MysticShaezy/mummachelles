@@ -25,7 +25,7 @@ type ToyPost = {
 async function getToyProducts(): Promise<ToyPost[]> {
   try {
     const res = await fetch(
-      "https://mediumturquoise-heron-953818.hostingersite.com/wp-json/wp/v2/posts?categories=3&_embed&per_page=20",
+      "https://wp.mummachelles.com.au/wp-json/wp/v2/posts?categories=3&_embed&per_page=20",
       { next: { revalidate: 3600 } },
     );
     if (!res.ok) return [];

@@ -1,4 +1,4 @@
-const WP_STAGING_ORIGIN = "https://mediumturquoise-heron-953818.hostingersite.com";
+const WP_STAGING_ORIGIN = "https://wp.mummachelles.com.au";
 
 export const WP_STAGING_POSTS_URL = `${WP_STAGING_ORIGIN}/wp-json/wp/v2/posts`;
 

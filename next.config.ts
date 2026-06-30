@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const WP_ORIGIN = "https://wp.mummachelles.com.au";
-const WP_STAGING = "https://mediumturquoise-heron-953818.hostingersite.com";
+const WP_STAGING = "https://wp.mummachelles.com.au";
 
 const nextConfig: NextConfig = {
   images: {
@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "mediumturquoise-heron-953818.hostingersite.com",
+        hostname: "wp.mummachelles.com.au",
         pathname: "/**",
       },
     ],
