@@ -75,7 +75,7 @@ export default async function ToysPage() {
       <BreadcrumbJsonLd items={[{ label: "Home", href: "/" }, { label: "Toys" }]} />
 
       <FullBleed bgClassName="bg-pink-pale">
-        <InViewSection className="relative pt-24 pb-16 md:pt-28 md:pb-20">
+        <InViewSection className="relative pt-16 pb-12 md:pt-20 md:pb-16">
           <Inner>
             <div className="mx-auto max-w-3xl space-y-8">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold md:text-sm">
