@@ -98,9 +98,11 @@ export default function HomePage() {
                   <HeartFloat className="size-6 translate-y-4 md:size-8" />
                 </div>
                 <div className="relative z-[1] space-y-8">
-                  <p className="font-display text-lg italic text-pink-hot [text-shadow:0_1px_8px_rgba(61,26,46,0.45)] md:text-xl">
-                    Books to Cherish · Toys to Love · Resources to Nourish
-                  </p>
+                  <div className="inline-flex rounded-full bg-pink-hot px-8 py-3 shadow-md shadow-pink-hot/30">
+                    <p className="font-display text-sm italic text-white md:text-base">
+                      Books to Cherish · Toys to Love · Resources to Nourish
+                    </p>
+                  </div>
                   <h1 className="font-display text-4xl leading-tight text-plum md:text-5xl lg:text-[3.25rem]">
                     Curating{" "}
                     <span className="text-pink-hot">
