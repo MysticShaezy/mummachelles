@@ -4,6 +4,7 @@ import { InViewSection } from "@/components/sections/InViewSection";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { createPageMetadata } from "@/lib/metadata";
 import { IMAGES } from "@/lib/images";
+import { getWpPosts, stripHtml, WP_CATEGORY_IDS } from "@/lib/wordpress";
 
 export const metadata = createPageMetadata({
   title: "Toys to Love",
@@ -11,29 +12,6 @@ export const metadata = createPageMetadata({
   description:
     "Handpicked toys for creative play, sensory regulation, and motor skill development. Curated by Mumma Chelles.",
 });
-
-type ToyPost = {
-  id: number;
-  link: string;
-  title: { rendered: string };
-  excerpt?: { rendered?: string };
-  _embedded?: {
-    "wp:featuredmedia"?: Array<{ source_url?: string }>;
-  };
-};
-
-async function getToyProducts(): Promise<ToyPost[]> {
-  try {
-    const res = await fetch(
-      "https://wp.mummachelles.com.au/wp-json/wp/v2/posts?categories=3&_embed&per_page=20",
-      { next: { revalidate: 3600 } },
-    );
-    if (!res.ok) return [];
-    return res.json();
-  } catch {
-    return [];
-  }
-}
 
 function FullBleed({
   bgClassName,
@@ -68,7 +46,7 @@ function Inner({
 }
 
 export default async function ToysPage() {
-  const toys = await getToyProducts();
+  const toys = await getWpPosts(WP_CATEGORY_IDS.toys);
 
   return (
     <div className="-mx-4 overflow-x-hidden pb-16 sm:-mx-6 lg:-mx-10">
@@ -115,14 +93,12 @@ export default async function ToysPage() {
                   <a
                     key={toy.id}
                     href={toy.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="group overflow-hidden rounded-2xl border border-pink-soft bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                   >
                     {toy._embedded?.["wp:featuredmedia"]?.[0]?.source_url && (
                       <img
                         src={toy._embedded["wp:featuredmedia"][0].source_url}
-                        alt={toy.title.rendered.replace(/<[^>]*>/g, "")}
+                        alt={stripHtml(toy.title.rendered)}
                         className="h-48 w-full object-cover"
                       />
                     )}
