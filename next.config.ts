@@ -21,11 +21,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       // ---- TOYS ----
-      { source: "/post/new-blog-post-6777-8989", destination: "/toys/wooden-colour-sorting-toys", permanent: true },
-      { source: "/post/new-blog-post-6777-8989-8974", destination: "/toys/montessori-busy-truck", permanent: true },
-      { source: "/post/new-blog-post-6777-9367", destination: "/toys/wobble-boards", permanent: true },
-      { source: "/post/new-blog-post-6777", destination: "/toys/balance-bikes", permanent: true },
-      { source: "/post/new-blog-post", destination: "/toys/wheelie-bugs", permanent: true },
+      { source: "/post/new-blog-post-6777-8989", destination: "/toys/wooden-colour-sorting-toys-montessori-toy-recommendation-by-mumma-chelle", permanent: true },
+      { source: "/post/new-blog-post-6777-8989-8974", destination: "/toys/13-2", permanent: true },
+      { source: "/post/new-blog-post-6777-9367", destination: "/toys/wobble-boards-recommended-toy-by-mumma-chelle", permanent: true },
+      { source: "/post/new-blog-post-6777", destination: "/toys/balance-bike-for-toddlers-kriddo-kids", permanent: true },
+      { source: "/post/new-blog-post", destination: "/toys/wheelie-bugs-recommended-toy", permanent: true },
 
       // ---- BOOKS: Children's Literature ----
       { source: "/post/new-blog-post-7988", destination: "/books/jetty-jumping", permanent: true },
