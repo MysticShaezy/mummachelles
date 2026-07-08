@@ -11,9 +11,9 @@
  */
 
 const DEFAULT_PATHS = {
-  feelCalm: "/wellbeing/pdfs/feel-calm-product-information.pdf",
-  nightTime: "/wellbeing/pdfs/night-time-product-information.pdf",
-  ySpan: "/wellbeing/pdfs/y-span-product-information.pdf",
+  feelCalm: "/wellbeing/feel-calm-product-info.pdf",
+  nightTime: "/wellbeing/night-time-product-info.pdf",
+  ySpan: "/wellbeing/yspan-product-info.pdf",
 } as const;
 
 export type WellbeingPdfProduct = keyof typeof DEFAULT_PATHS;

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
+import { Check, ShoppingCart } from "lucide-react";
 import type { ReactNode } from "react";
 import {
   BeeDecoration,
@@ -57,48 +57,52 @@ function Inner({
   );
 }
 
-function PurchaseCountryLinks({
+function PurchaseCountryButtons({
   buttons,
 }: {
   buttons: readonly { label: string; href: string }[];
 }) {
   const [australia, usa, singapore] = buttons;
-  const linkClass =
-    "font-semibold text-pink-hot underline underline-offset-2 hover:text-plum";
+  const buttonClass =
+    "inline-flex items-center gap-2 justify-center rounded-full bg-pink-hot px-6 py-2.5 text-center text-sm font-semibold text-white shadow-md shadow-pink-hot/25 transition hover:bg-[#cf3f6f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot focus-visible:ring-offset-2";
   return (
-    <p className="text-sm text-muted">
-      <span className="font-medium text-plum">Purchase: </span>
-      <a
-        href={australia.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={linkClass}
-      >
-        Australia
-      </a>
-      <span className="mx-1.5 text-pink-soft" aria-hidden>
-        ·
-      </span>
-      <a
-        href={usa.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={linkClass}
-      >
-        USA
-      </a>
-      <span className="mx-1.5 text-pink-soft" aria-hidden>
-        ·
-      </span>
-      <a
-        href={singapore.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={linkClass}
-      >
-        Singapore
-      </a>
-    </p>
+    <div className="space-y-3">
+      <div className="rounded-lg border border-gold/30 bg-gold/10 px-4 py-2 text-center">
+        <p className="text-sm font-semibold text-plum">
+          🎁 Special Offer: Save{" "}
+          <span className="text-pink-hot">20% Today!</span>
+        </p>
+      </div>
+      <div className="flex flex-col gap-2 sm:flex-row sm:gap-3">
+        <a
+          href={australia.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={buttonClass}
+        >
+          <ShoppingCart className="size-4" aria-hidden="true" />
+          Australia
+        </a>
+        <a
+          href={usa.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={buttonClass}
+        >
+          <ShoppingCart className="size-4" aria-hidden="true" />
+          USA
+        </a>
+        <a
+          href={singapore.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={buttonClass}
+        >
+          <ShoppingCart className="size-4" aria-hidden="true" />
+          Singapore
+        </a>
+      </div>
+    </div>
   );
 }
 
@@ -312,15 +316,20 @@ export function WellbeingHubPage() {
         <MotionSection className="relative py-20 md:py-28">
           <HeartFloat className="pointer-events-none absolute right-[6%] top-[15%] size-8 opacity-50" />
           <Inner>
-            <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-              <div className="relative overflow-hidden rounded-2xl shadow-lg ring-2 ring-white">
-                <CldImage
-                  src={IMAGES.wellbeing.feelCalmProduct}
-                  alt="MYNuDay360 Feel Calm product"
-                  width={640}
-                  height={640}
-                  className="aspect-square w-full object-cover"
-                  sizes="(max-width: 1024px) 92vw, 40vw"
+            <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
+              <div className="space-y-4">
+                <div className="relative overflow-hidden rounded-2xl shadow-lg ring-2 ring-white">
+                  <CldImage
+                    src={IMAGES.wellbeing.feelCalmProduct}
+                    alt="MYNuDay360 Feel Calm product"
+                    width={640}
+                    height={640}
+                    className="aspect-square w-full object-cover"
+                    sizes="(max-width: 1024px) 92vw, 40vw"
+                  />
+                </div>
+                <PurchaseCountryButtons
+                  buttons={FEEL_CALM_CONTENT.purchase.buttons}
                 />
               </div>
               <div className="space-y-5">
@@ -371,16 +380,13 @@ export function WellbeingHubPage() {
                   *Not intended to diagnose, treat, cure, or prevent any
                   disease.
                 </p>
-                <div className="space-y-3 pt-2">
+                <div className="pt-2">
                   <Link
                     href="/wellbeing/feel-calm"
-                    className="inline-flex justify-center rounded-full bg-pink-hot px-8 py-3 text-center text-sm font-semibold text-white shadow-md shadow-pink-hot/25 transition hover:bg-[#cf3f6f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot focus-visible:ring-offset-2 focus-visible:ring-offset-pink-pale"
+                    className="inline-flex justify-center rounded-full bg-plum px-8 py-3 text-center text-sm font-semibold text-white shadow-md transition hover:bg-plum/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plum focus-visible:ring-offset-2 focus-visible:ring-offset-pink-pale"
                   >
                     Learn More
                   </Link>
-                  <PurchaseCountryLinks
-                    buttons={FEEL_CALM_CONTENT.purchase.buttons}
-                  />
                 </div>
               </div>
             </div>
@@ -392,7 +398,7 @@ export function WellbeingHubPage() {
         <MotionSection className="relative py-20 md:py-28">
           <BeeDecoration className="pointer-events-none absolute bottom-[15%] left-[4%] size-12 opacity-50 md:size-14" />
           <Inner>
-            <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+            <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
               <div className="space-y-5 lg:order-1">
                 <span className="inline-block rounded-full bg-gold/10 px-4 py-1 text-sm font-semibold text-gold">
                   My Evening Support Recommendation
@@ -437,26 +443,28 @@ export function WellbeingHubPage() {
                   *Not intended to diagnose, treat, cure, or prevent any
                   disease.
                 </p>
-                <div className="space-y-3 pt-2">
+                <div className="pt-2">
                   <Link
                     href="/wellbeing/night-time"
-                    className="inline-flex justify-center rounded-full bg-pink-hot px-8 py-3 text-center text-sm font-semibold text-white shadow-md shadow-pink-hot/25 transition hover:bg-[#cf3f6f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                    className="inline-flex justify-center rounded-full bg-plum px-8 py-3 text-center text-sm font-semibold text-white shadow-md transition hover:bg-plum/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plum focus-visible:ring-offset-2 focus-visible:ring-offset-white"
                   >
                     Learn More
                   </Link>
-                  <PurchaseCountryLinks
-                    buttons={NIGHT_TIME_CONTENT.purchase.buttons}
-                  />
                 </div>
               </div>
-              <div className="relative overflow-hidden rounded-2xl shadow-lg ring-2 ring-pink-soft/40 lg:order-2">
-                <CldImage
-                  src={IMAGES.wellbeing.nightTimeProduct}
-                  alt="MYNuDay360 Night Time product"
-                  width={640}
-                  height={640}
-                  className="aspect-square w-full object-cover"
-                  sizes="(max-width: 1024px) 92vw, 40vw"
+              <div className="space-y-4 lg:order-2">
+                <div className="relative overflow-hidden rounded-2xl shadow-lg ring-2 ring-pink-soft/40">
+                  <CldImage
+                    src={IMAGES.wellbeing.nightTimeProduct}
+                    alt="MYNuDay360 Night Time product"
+                    width={640}
+                    height={640}
+                    className="aspect-square w-full object-cover"
+                    sizes="(max-width: 1024px) 92vw, 40vw"
+                  />
+                </div>
+                <PurchaseCountryButtons
+                  buttons={NIGHT_TIME_CONTENT.purchase.buttons}
                 />
               </div>
             </div>
@@ -468,15 +476,20 @@ export function WellbeingHubPage() {
         <MotionSection className="relative py-20 md:py-28">
           <DottedTrail className="pointer-events-none absolute right-[10%] top-[25%] w-36 -rotate-6 opacity-45" />
           <Inner>
-            <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-              <div className="relative overflow-hidden rounded-2xl shadow-lg ring-2 ring-white">
-                <CldImage
-                  src={IMAGES.wellbeing.ySpanProduct}
-                  alt="ageLOC Y-Span product"
-                  width={640}
-                  height={640}
-                  className="aspect-square w-full object-cover"
-                  sizes="(max-width: 1024px) 92vw, 40vw"
+            <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
+              <div className="space-y-4">
+                <div className="relative overflow-hidden rounded-2xl shadow-lg ring-2 ring-white">
+                  <CldImage
+                    src={IMAGES.wellbeing.ySpanProduct}
+                    alt="ageLOC Y-Span product"
+                    width={640}
+                    height={640}
+                    className="aspect-square w-full object-cover"
+                    sizes="(max-width: 1024px) 92vw, 40vw"
+                  />
+                </div>
+                <PurchaseCountryButtons
+                  buttons={Y_SPAN_CONTENT.purchase.buttons}
                 />
               </div>
               <div className="space-y-5">
@@ -532,16 +545,13 @@ export function WellbeingHubPage() {
                   *Not intended to diagnose, treat, cure, or prevent any
                   disease.
                 </p>
-                <div className="space-y-3 pt-2">
+                <div className="pt-2">
                   <Link
                     href="/wellbeing/y-span"
-                    className="inline-flex justify-center rounded-full bg-pink-hot px-8 py-3 text-center text-sm font-semibold text-white shadow-md shadow-pink-hot/25 transition hover:bg-[#cf3f6f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot focus-visible:ring-offset-2 focus-visible:ring-offset-pink-pale"
+                    className="inline-flex justify-center rounded-full bg-plum px-8 py-3 text-center text-sm font-semibold text-white shadow-md transition hover:bg-plum/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plum focus-visible:ring-offset-2 focus-visible:ring-offset-pink-pale"
                   >
                     Learn More
                   </Link>
-                  <PurchaseCountryLinks
-                    buttons={Y_SPAN_CONTENT.purchase.buttons}
-                  />
                 </div>
               </div>
             </div>

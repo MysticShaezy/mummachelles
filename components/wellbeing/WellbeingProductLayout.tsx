@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CldImage } from "@/components/ui/cloudinary";
-import { Check, Circle } from "lucide-react";
+import { Check, Circle, ShoppingCart } from "lucide-react";
 import type { ReactNode } from "react";
 import {
   BeeDecoration,
@@ -194,6 +194,28 @@ export function WellbeingProductLayout({
                     {content.hero.closingParagraph}
                   </p>
                 ) : null}
+              </div>
+            </div>
+            <div className="mx-auto max-w-3xl space-y-6 text-center mt-12 md:mt-16">
+              <div className="rounded-lg border border-gold/30 bg-gold/10 px-4 py-2 text-center">
+                <p className="text-sm font-semibold text-plum">
+                  🎁 Special Offer: Save{" "}
+                  <span className="text-pink-hot">20% Today!</span>
+                </p>
+              </div>
+              <div className="flex flex-col flex-wrap items-stretch justify-center gap-4 sm:flex-row sm:justify-center">
+                {content.purchase.buttons.map((b) => (
+                  <a
+                    key={b.label}
+                    href={b.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex flex-1 items-center gap-2 justify-center rounded-full bg-pink-hot px-8 py-3 text-center text-sm font-semibold text-white shadow-md shadow-pink-hot/25 transition hover:bg-[#cf3f6f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot focus-visible:ring-offset-2 focus-visible:ring-offset-blush sm:min-w-[200px] sm:flex-none"
+                  >
+                    <ShoppingCart className="size-4" aria-hidden="true" />
+                    {b.label}
+                  </a>
+                ))}
               </div>
             </div>
           </Inner>
@@ -478,10 +500,13 @@ export function WellbeingProductLayout({
       <FullBleed bgClassName="bg-pink-pale">
         <InViewSection className="relative py-20 md:py-28">
           <Inner>
-            <div className="mx-auto max-w-3xl space-y-8 text-center">
-              <h2 className="font-display text-3xl text-plum md:text-4xl">
-                Purchase Now
-              </h2>
+            <div className="mx-auto max-w-3xl space-y-6 text-center">
+              <div className="rounded-lg border border-gold/30 bg-gold/10 px-4 py-2 text-center">
+                <p className="text-sm font-semibold text-plum">
+                  🎁 Special Offer: Save{" "}
+                  <span className="text-pink-hot">20% Today!</span>
+                </p>
+              </div>
               <div className="flex flex-col flex-wrap items-stretch justify-center gap-4 sm:flex-row sm:justify-center">
                 {content.purchase.buttons.map((b) => (
                   <a
@@ -489,8 +514,9 @@ export function WellbeingProductLayout({
                     href={b.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex flex-1 justify-center rounded-full bg-pink-hot px-8 py-3 text-center text-sm font-semibold text-white shadow-md shadow-pink-hot/25 transition hover:bg-[#cf3f6f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot focus-visible:ring-offset-2 focus-visible:ring-offset-pink-pale sm:min-w-[200px] sm:flex-none"
+                    className="inline-flex flex-1 items-center gap-2 justify-center rounded-full bg-pink-hot px-8 py-3 text-center text-sm font-semibold text-white shadow-md shadow-pink-hot/25 transition hover:bg-[#cf3f6f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot focus-visible:ring-offset-2 focus-visible:ring-offset-pink-pale sm:min-w-[200px] sm:flex-none"
                   >
+                    <ShoppingCart className="size-4" aria-hidden="true" />
                     {b.label}
                   </a>
                 ))}
