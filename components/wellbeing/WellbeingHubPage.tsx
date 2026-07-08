@@ -9,14 +9,14 @@ import {
   DottedTrail,
   HeartFloat,
 } from "@/components/home/decorative";
+import { WellbeingDisclaimerBanner } from "@/components/wellbeing/WellbeingDisclaimerBanner";
 import { CldImage } from "@/components/ui/cloudinary";
 import { IMAGES } from "@/lib/images";
-
-const NU = {
-  au: "https://www.nuskin.com/en_AU",
-  us: "https://www.nuskin.com/en_US",
-  sg: "https://www.nuskin.com/en_SG",
-} as const;
+import {
+  FEEL_CALM_CONTENT,
+  NIGHT_TIME_CONTENT,
+  Y_SPAN_CONTENT,
+} from "@/lib/wellbeing-products";
 
 const fadeUp = {
   initial: { opacity: 0, y: 28 },
@@ -57,14 +57,19 @@ function Inner({
   );
 }
 
-function PurchaseCountryLinks() {
+function PurchaseCountryLinks({
+  buttons,
+}: {
+  buttons: readonly { label: string; href: string }[];
+}) {
+  const [australia, usa, singapore] = buttons;
   const linkClass =
     "font-semibold text-pink-hot underline underline-offset-2 hover:text-plum";
   return (
     <p className="text-sm text-muted">
       <span className="font-medium text-plum">Purchase: </span>
       <a
-        href={NU.au}
+        href={australia.href}
         target="_blank"
         rel="noopener noreferrer"
         className={linkClass}
@@ -75,7 +80,7 @@ function PurchaseCountryLinks() {
         ·
       </span>
       <a
-        href={NU.us}
+        href={usa.href}
         target="_blank"
         rel="noopener noreferrer"
         className={linkClass}
@@ -86,7 +91,7 @@ function PurchaseCountryLinks() {
         ·
       </span>
       <a
-        href={NU.sg}
+        href={singapore.href}
         target="_blank"
         rel="noopener noreferrer"
         className={linkClass}
@@ -114,6 +119,7 @@ function MotionSection({
 export function WellbeingHubPage() {
   return (
     <div className="-mx-4 overflow-x-hidden pb-16 sm:-mx-6 lg:-mx-10">
+      <WellbeingDisclaimerBanner />
       <FullBleed bgClassName="bg-blush">
         <MotionSection className="relative flex min-h-screen items-center pt-8 pb-16">
           <BeeDecoration className="pointer-events-none absolute left-[6%] top-16 size-14 opacity-55 md:size-16" />
@@ -373,7 +379,9 @@ export function WellbeingHubPage() {
                   >
                     Learn More
                   </Link>
-                  <PurchaseCountryLinks />
+                  <PurchaseCountryLinks
+                    buttons={FEEL_CALM_CONTENT.purchase.buttons}
+                  />
                 </div>
               </div>
             </div>
@@ -437,7 +445,9 @@ export function WellbeingHubPage() {
                   >
                     Learn More
                   </Link>
-                  <PurchaseCountryLinks />
+                  <PurchaseCountryLinks
+                    buttons={NIGHT_TIME_CONTENT.purchase.buttons}
+                  />
                 </div>
               </div>
               <div className="relative overflow-hidden rounded-2xl shadow-lg ring-2 ring-pink-soft/40 lg:order-2">
@@ -530,7 +540,9 @@ export function WellbeingHubPage() {
                   >
                     Learn More
                   </Link>
-                  <PurchaseCountryLinks />
+                  <PurchaseCountryLinks
+                    buttons={Y_SPAN_CONTENT.purchase.buttons}
+                  />
                 </div>
               </div>
             </div>

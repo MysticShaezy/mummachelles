@@ -9,6 +9,7 @@ import {
 } from "@/components/home/decorative";
 import { InViewSection } from "@/components/sections/InViewSection";
 import { WellbeingClinicalGuideSplit } from "@/components/wellbeing/WellbeingClinicalGuideSplit";
+import { WellbeingDisclaimerBanner } from "@/components/wellbeing/WellbeingDisclaimerBanner";
 import { WellbeingHowItWorksIngredientSplit } from "@/components/wellbeing/WellbeingHowItWorksIngredientSplit";
 import { WellbeingProductVideoBlock } from "@/components/wellbeing/WellbeingProductVideoBlock";
 import type { WellbeingProductContent } from "@/lib/wellbeing-products";
@@ -97,6 +98,7 @@ export function WellbeingProductLayout({
 
   return (
     <div className="-mx-4 overflow-x-hidden pb-16 sm:-mx-6 lg:-mx-10">
+      <WellbeingDisclaimerBanner />
       <FullBleed bgClassName="bg-blush">
         <InViewSection className="relative pt-24 pb-16 md:pt-28 md:pb-20">
           <BeeDecoration className="pointer-events-none absolute bottom-8 left-[5%] size-14 opacity-60 md:size-16" />

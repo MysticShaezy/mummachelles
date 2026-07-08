@@ -6,10 +6,8 @@ import {
   DottedTrail,
   PencilDecoration,
 } from "@/components/home/decorative";
-import {
-  ResourceDownloadGrid,
-  type ResourceDownloadItem,
-} from "@/components/resources/ResourceDownloadGrid";
+import type { ResourceDownloadItem } from "@/components/resources/ResourceDownloadGrid";
+import { ResourcesDownloadsSection } from "@/components/resources/ResourcesDownloadsSection";
 import { InViewSection } from "@/components/sections/InViewSection";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { createPageMetadata } from "@/lib/metadata";
@@ -27,7 +25,7 @@ const RESOURCE_ITEMS: ResourceDownloadItem[] = [
     title: "Co-Regulation Guide",
     description:
       "Get your free guide to co-regulation and discover how to stay calm together.",
-    href: "https://links.mummachelles.com.au/widget/form/Y8OxT8Gxs4JeIL5StIO1",
+    downloadHref: "/resources/co-regulation-guide.pdf",
     buttonText: "Co-Regulation Guide",
     imageSrc: IMAGES.resources.coRegulation,
   },
@@ -35,7 +33,7 @@ const RESOURCE_ITEMS: ResourceDownloadItem[] = [
     title: "Fine Motor Skills Checklist",
     description:
       "A handy printable guide packed with fun, practical activities to strengthen little hands - supporting coordination, handwriting readiness, and everyday independence.",
-    href: "https://links.mummachelles.com.au/widget/form/dehPz0N64MGAcKhbvZq5",
+    downloadHref: "/resources/fine-motor-skills-checklist.pdf",
     buttonText: "Fine Motor Skills Checklist",
     imageSrc: IMAGES.resources.fineMotor,
   },
@@ -43,7 +41,7 @@ const RESOURCE_ITEMS: ResourceDownloadItem[] = [
     title: "Play Dough Recipe",
     description:
       "A tried-and-true favourite - soft, safe, and easy to make! This recipe encourages creativity, sensory play, and fine-motor development.",
-    href: "https://links.mummachelles.com.au/widget/form/ZJ9W45KXnulrJCc0rGPL",
+    downloadHref: "/resources/play-dough-recipe.pdf",
     buttonText: "Play Dough Recipe",
     imageSrc: IMAGES.resources.playDough,
   },
@@ -51,7 +49,7 @@ const RESOURCE_ITEMS: ResourceDownloadItem[] = [
     title: "Sing, Move, Grow Guide",
     description:
       "A fun, music-based activity guide designed to help children learn through movement, rhythm, and play.",
-    href: "https://links.mummachelles.com.au/widget/form/lgvIslvYxjzy6JGkVCnI",
+    downloadHref: "/resources/sing-move-grow-guide.pdf",
     buttonText: "Sing, Move, Grow Guide",
     imageSrc: IMAGES.resources.singMoveGrow,
   },
@@ -59,7 +57,7 @@ const RESOURCE_ITEMS: ResourceDownloadItem[] = [
     title: "Printable Blank Visual Schedule",
     description:
       "This blank visual schedule is designed to help create structure and predictability in a daily routine.",
-    href: "https://links.mummachelles.com.au/widget/form/3OQNbjZtk64rdzvMZpLF",
+    downloadHref: "/resources/blank-visual-schedule.pdf",
     buttonText: "Printable Blank Visual Schedule",
     imageSrc: IMAGES.resources.visualSchedule,
   },
@@ -67,7 +65,7 @@ const RESOURCE_ITEMS: ResourceDownloadItem[] = [
     title: "Self Care Guide for Parents",
     description:
       "Discover gentle, practical strategies from Chelle - to help you refill your cup with calm, compassion, and balance when life feels heavy.",
-    href: "https://links.mummachelles.com.au/widget/form/zOb1XSwmm5s5HRiAtrOP",
+    downloadHref: "/resources/self-care-guide.pdf",
     buttonText: "Self Care Guide for Parents",
     imageSrc: IMAGES.resources.selfCare,
   },
@@ -75,7 +73,7 @@ const RESOURCE_ITEMS: ResourceDownloadItem[] = [
     title: "Social Story Template",
     description:
       "Help children understand what to expect during a cafe visit, using gentle, step-by-step guidance and visuals to build confidence, calm, and social awareness in real-life experiences.",
-    href: "https://links.mummachelles.com.au/widget/form/Y4AvOEmpPa8jMawA41sb",
+    downloadHref: "/resources/social-story-template.pdf",
     buttonText: "Social Story Template",
     imageSrc: IMAGES.resources.socialStory,
   },
@@ -83,9 +81,17 @@ const RESOURCE_ITEMS: ResourceDownloadItem[] = [
     title: "Printable Activity Symbols",
     description:
       "Fun, visual tools to support communication, routines, and learning - perfect for visual schedules, classroom boards, or at-home activities.",
-    href: "https://links.mummachelles.com.au/widget/form/is9NY9iRvEnklG2SK2gH",
+    downloadHref: "/resources/printable-activity-symbols.pdf",
     buttonText: "Printable Activity Symbols",
     imageSrc: IMAGES.resources.activitySymbols,
+  },
+  {
+    title: "Child Language Development Guide",
+    description:
+      "A complete parent's guide to supporting your child's communication milestones from birth to school age, covering every stage, red flags, and practical strategies.",
+    downloadHref: "/resources/child-language-development-guide.pdf",
+    buttonText: "Child Language Development Guide",
+    localImageSrc: "/resources/child-language-development-card.png",
   },
 ];
 
@@ -198,10 +204,11 @@ export default function ResourcesPage() {
                 Recommended <span className="text-pink-hot">Resources</span>
               </h2>
               <p className="text-lg text-muted md:text-xl">
-                All resources are free. Enter your details to receive your download.
+                All resources are free. Enter your details once to unlock every
+                download.
               </p>
             </div>
-            <ResourceDownloadGrid items={RESOURCE_ITEMS} />
+            <ResourcesDownloadsSection items={RESOURCE_ITEMS} />
           </Inner>
         </InViewSection>
       </FullBleed>
