@@ -206,12 +206,12 @@ export const FEEL_CALM_CONTENT = {
   purchase: {
     buttons: [
       {
-        label: "Australia - Feel Calm",
+        label: "Australia",
         href: "https://nskn.co/8xXngw",
       },
-      { label: "USA - Feel Calm", href: "https://nskn.co/oM4T68" },
+      { label: "United States", href: "https://nskn.co/oM4T68" },
       {
-        label: "Singapore - Feel Calm",
+        label: "Singapore",
         href: "https://nskn.co/Kb74Lm",
       },
     ],
@@ -318,12 +318,12 @@ export const NIGHT_TIME_CONTENT = {
   purchase: {
     buttons: [
       {
-        label: "Australia - Night Time",
+        label: "Australia",
         href: "https://nskn.co/GyWmpP",
       },
-      { label: "USA - Night Time", href: "https://nskn.co/DmlTvb" },
+      { label: "United States", href: "https://nskn.co/DmlTvb" },
       {
-        label: "Singapore - Night Time",
+        label: "Singapore",
         href: "https://nskn.co/qVwzcl",
       },
     ],
@@ -452,10 +452,10 @@ export const Y_SPAN_CONTENT = {
   },
   purchase: {
     buttons: [
-      { label: "Australia - Y-Span", href: "https://nskn.co/dTtb12" },
-      { label: "USA - Y-Span", href: "https://nskn.co/rpwkvz" },
+      { label: "Australia", href: "https://nskn.co/dTtb12" },
+      { label: "United States", href: "https://nskn.co/rpwkvz" },
       {
-        label: "Singapore - Y-Span",
+        label: "Singapore",
         href: "https://nskn.co/DMN4e4",
       },
     ],
