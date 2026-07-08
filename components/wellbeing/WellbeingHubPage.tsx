@@ -119,7 +119,6 @@ function MotionSection({
 export function WellbeingHubPage() {
   return (
     <div className="-mx-4 overflow-x-hidden pb-16 sm:-mx-6 lg:-mx-10">
-      <WellbeingDisclaimerBanner />
       <FullBleed bgClassName="bg-blush">
         <MotionSection className="relative flex min-h-screen items-center pt-8 pb-16">
           <BeeDecoration className="pointer-events-none absolute left-[6%] top-16 size-14 opacity-55 md:size-16" />
@@ -584,6 +583,7 @@ export function WellbeingHubPage() {
           </Inner>
         </MotionSection>
       </FullBleed>
+      <WellbeingDisclaimerBanner />
     </div>
   );
 }

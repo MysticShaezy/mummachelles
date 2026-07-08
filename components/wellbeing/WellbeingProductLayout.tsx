@@ -98,7 +98,6 @@ export function WellbeingProductLayout({
 
   return (
     <div className="-mx-4 overflow-x-hidden pb-16 sm:-mx-6 lg:-mx-10">
-      <WellbeingDisclaimerBanner />
       <FullBleed bgClassName="bg-blush">
         <InViewSection className="relative pt-24 pb-16 md:pt-28 md:pb-20">
           <BeeDecoration className="pointer-events-none absolute bottom-8 left-[5%] size-14 opacity-60 md:size-16" />
@@ -606,6 +605,7 @@ export function WellbeingProductLayout({
           </Inner>
         </InViewSection>
       </FullBleed>
+      <WellbeingDisclaimerBanner />
     </div>
   );
 }
