@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Dancing_Script, Lato, Playfair_Display } from "next/font/google";
 
+import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { PageWrapper } from "@/components/layout/PageWrapper";
@@ -64,6 +65,7 @@ export default function RootLayout({
       className={`${displayFont.variable} ${bodyFont.variable} ${logoFont.variable} h-full`}
     >
       <body className="flex min-h-full flex-col bg-blush font-body text-plum antialiased">
+        <GoogleAnalytics />
         <JsonLd data={organizationLd} />
         <ScrollToTop />
         <Header />
