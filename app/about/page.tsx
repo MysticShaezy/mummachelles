@@ -97,7 +97,7 @@ export default function AboutPage() {
                   About Mumma Chelles
                 </h1>
                 <p className="font-display text-lg italic leading-relaxed text-pink-hot md:text-xl">
-                  Hi, I&apos;m Michelle Thomas - but most people know me simply
+                  Hi, I&apos;m Michelle Thomas, but most people know me simply
                   as Mumma Chelle
                 </p>
                 <div className="space-y-4 text-lg text-muted">
@@ -128,9 +128,9 @@ export default function AboutPage() {
               </h2>
               <p className="text-lg leading-relaxed text-muted md:text-xl">
                 Mumma Chelle began as a nickname, but it quickly became
-                something more - a reflection of how I work and who I am.
+                something more: a reflection of how I work and who I am.
                 I&apos;m passionate about creating a warm approach with
-                practical tools that make a difference - whether that&apos;s a
+                practical tools that make a difference, whether that&apos;s a
                 carefully chosen children&apos;s book, a resource for educators,
                 or a course that helps carers feel more confident. My mission is
                 to grow Mumma Chelles into a trusted space where families and
@@ -166,7 +166,7 @@ export default function AboutPage() {
                 </h3>
                 <p className="flex-1 text-muted">
                   Engaging, evidence-based sessions on topics like behaviour,
-                  connection, and emotional regulation - delivered with warmth,
+                  connection, and emotional regulation, delivered with warmth,
                   realness, and practical strategies.
                 </p>
               </article>
@@ -312,7 +312,7 @@ export default function AboutPage() {
                   </h3>
                   <p className="flex-1 text-muted">
                     Practical and thoughtful tools to support your health,
-                    wellbeing, parenting, and caring journey - empowering you with
+                    wellbeing, parenting, and caring journey, empowering you with
                     knowledge, reassurance, and calm confidence.
                   </p>
                   <Link

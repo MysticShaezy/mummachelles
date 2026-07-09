@@ -191,7 +191,7 @@ export function WellbeingHubPage() {
                 <p>
                   Supplements are not a replacement for therapy, medication,
                   or medical care. They are designed to gently support the
-                  body&apos;s natural systems - not override them.
+                  body&apos;s natural systems, not override them.
                 </p>
                 <p>
                   This page exists to offer gentle, complementary tools that may
@@ -366,10 +366,10 @@ export function WellbeingHubPage() {
                 </ul>
                 <p className="font-bold text-plum">Key Ingredients:</p>
                 <ul className="list-disc space-y-2 pl-5 text-muted">
-                  <li>Lemon Balm Extract - studied for supporting calmness</li>
-                  <li>L-Theanine - supports relaxed alertness</li>
+                  <li>Lemon Balm Extract: studied for supporting calmness</li>
+                  <li>L-Theanine: supports relaxed alertness</li>
                   <li>
-                    Magnolia Bark Extract - studied for its effects on mood
+                    Magnolia Bark Extract: studied for its effects on mood
                   </li>
                 </ul>
                 <p className="text-sm italic text-muted">
@@ -577,7 +577,7 @@ export function WellbeingHubPage() {
               <p className="font-display text-xl italic leading-relaxed text-plum md:text-2xl lg:text-[1.65rem]">
                 If you&apos;re looking for someone who&apos;ll meet you where
                 you&apos;re at, hold space without judgment, and offer support
-                that actually makes a difference - you&apos;re in the right
+                that actually makes a difference, you&apos;re in the right
                 place.
               </p>
               <p className="font-display text-lg font-bold text-plum md:text-xl">

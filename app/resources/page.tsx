@@ -32,7 +32,7 @@ const RESOURCE_ITEMS: ResourceDownloadItem[] = [
   {
     title: "Fine Motor Skills Checklist",
     description:
-      "A handy printable guide packed with fun, practical activities to strengthen little hands - supporting coordination, handwriting readiness, and everyday independence.",
+      "A handy printable guide packed with fun, practical activities to strengthen little hands, supporting coordination, handwriting readiness, and everyday independence.",
     downloadHref: "/resources/fine-motor-skills-checklist.pdf",
     buttonText: "Fine Motor Skills Checklist",
     imageSrc: IMAGES.resources.fineMotor,
@@ -40,7 +40,7 @@ const RESOURCE_ITEMS: ResourceDownloadItem[] = [
   {
     title: "Play Dough Recipe",
     description:
-      "A tried-and-true favourite - soft, safe, and easy to make! This recipe encourages creativity, sensory play, and fine-motor development.",
+      "A tried-and-true favourite: soft, safe, and easy to make! This recipe encourages creativity, sensory play, and fine-motor development.",
     downloadHref: "/resources/play-dough-recipe.pdf",
     buttonText: "Play Dough Recipe",
     imageSrc: IMAGES.resources.playDough,
@@ -64,7 +64,7 @@ const RESOURCE_ITEMS: ResourceDownloadItem[] = [
   {
     title: "Self Care Guide for Parents",
     description:
-      "Discover gentle, practical strategies from Chelle - to help you refill your cup with calm, compassion, and balance when life feels heavy.",
+      "Discover gentle, practical strategies from Chelle to help you refill your cup with calm, compassion, and balance when life feels heavy.",
     downloadHref: "/resources/self-care-guide.pdf",
     buttonText: "Self Care Guide for Parents",
     imageSrc: IMAGES.resources.selfCare,
@@ -80,7 +80,7 @@ const RESOURCE_ITEMS: ResourceDownloadItem[] = [
   {
     title: "Printable Activity Symbols",
     description:
-      "Fun, visual tools to support communication, routines, and learning - perfect for visual schedules, classroom boards, or at-home activities.",
+      "Fun, visual tools to support communication, routines, and learning, perfect for visual schedules, classroom boards, or at-home activities.",
     downloadHref: "/resources/printable-activity-symbols.pdf",
     buttonText: "Printable Activity Symbols",
     imageSrc: IMAGES.resources.activitySymbols,

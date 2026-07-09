@@ -107,7 +107,7 @@ export const FEEL_CALM_CONTENT = {
     subheading: "Support for mood balance and a healthy stress response",
     introParagraphs: [
       "Stress is part of modern life. Work demands, family responsibilities, financial pressures, and everyday decision-making can all place pressure on the mind and body.",
-      "Over time, ongoing stress can begin to affect many areas of daily life - including concentration, energy levels, emotional balance, sleep quality, and relationships.",
+      "Over time, ongoing stress can begin to affect many areas of daily life, including concentration, energy levels, emotional balance, sleep quality, and relationships.",
     ],
     symptomsHeading: "You might notice signs such as:",
     symptoms: [
@@ -120,7 +120,7 @@ export const FEEL_CALM_CONTENT = {
       "Reduced interest in daily activities",
     ],
     symptomsClosing:
-      "Stress doesn't just affect how we feel mentally - it can also influence how our body responds to everyday challenges.",
+      "Stress doesn't just affect how we feel mentally; it can also influence how our body responds to everyday challenges.",
   },
   supporting: {
     h2: "Supporting Your Body's Natural Stress Response",
@@ -285,7 +285,7 @@ export const NIGHT_TIME_CONTENT = {
     cards: [
       {
         title: "Magnesium",
-        body: "Magnesium is an essential mineral involved in many processes in the body, including those linked to relaxation and sleep-wake regulation. It plays a role in supporting neurotransmitter activity associated with calm and rest. When mixed with warm water, the formula transforms into magnesium citrate - a bioavailable form that is easily absorbed.",
+        body: "Magnesium is an essential mineral involved in many processes in the body, including those linked to relaxation and sleep-wake regulation. It plays a role in supporting neurotransmitter activity associated with calm and rest. When mixed with warm water, the formula transforms into magnesium citrate, a bioavailable form that is easily absorbed.",
       },
       {
         title: "Saffron Stigma Extract",
@@ -369,7 +369,7 @@ export const Y_SPAN_CONTENT = {
       "Advanced support for healthy ageing, energy, and cellular wellbeing",
     introParagraphs: [
       "As we move through life, our body naturally changes. Energy levels shift, recovery can take longer, and we may start to notice changes in focus, resilience, and overall vitality.",
-      "These changes are influenced by many factors - including lifestyle, environment, and how our body responds at a cellular level over time.",
+      "These changes are influenced by many factors, including lifestyle, environment, and how our body responds at a cellular level over time.",
     ],
     noticeHeading: "You might notice:",
     noticeItems: [
@@ -381,7 +381,7 @@ export const Y_SPAN_CONTENT = {
       "Wanting to feel more like yourself as you age",
     ],
     closingParagraph:
-      "Healthy ageing isn't about stopping time - it's about supporting your body to function at its best as you move through each stage of life.",
+      "Healthy ageing isn't about stopping time; it's about supporting your body to function at its best as you move through each stage of life.",
   },
   supporting: {
     h2: "Supporting Your Body's Natural Ageing Process",
@@ -414,7 +414,7 @@ export const Y_SPAN_CONTENT = {
       },
       {
         title: "Gene Expression & Ageing Defence",
-        body: "Y-Span is designed using research into gene expression and ageing defence mechanisms - supporting the body's natural processes that help maintain youthful function over time.",
+        body: "Y-Span is designed using research into gene expression and ageing defence mechanisms, supporting the body's natural processes that help maintain youthful function over time.",
       },
       {
         title: "Energy & Vitality",
@@ -448,7 +448,7 @@ export const Y_SPAN_CONTENT = {
   midSection: {
     type: "quote",
     quote:
-      "Developed from over 30 years of gene expression research - supporting your body's natural ability to maintain balance and resilience over time.",
+      "Developed from over 30 years of gene expression research, supporting your body's natural ability to maintain balance and resilience over time.",
   },
   purchase: {
     buttons: [

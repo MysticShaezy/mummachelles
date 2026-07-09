@@ -79,12 +79,12 @@ export default async function BlogPage() {
               <p>
                 Some of the book links on this page direct you to our curated
                 Amazon storefront. As an Amazon Associate, Mumma Chelle earns from
-                qualifying purchases - at no extra cost to you.
+                qualifying purchases, at no extra cost to you.
               </p>
               <p>
                 Every book recommended here has been carefully selected through a
                 blend of professional experience, lived insight, and a whole lot of
-                heart. These are titles we truly believe in - chosen to support,
+                heart. These are titles we truly believe in, chosen to support,
                 uplift, and spark meaningful conversations in your home,
                 classroom, or community.
               </p>

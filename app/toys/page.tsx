@@ -142,7 +142,7 @@ export default async function ToysPage() {
               <p>
                 Every toy recommended here has been carefully selected through a
                 blend of professional experience, lived insight, and a whole lot of
-                heart. These are picks we truly believe in - chosen to support
+                heart. These are picks we truly believe in, chosen to support
                 development, regulation, and joyful play at home, in care, or in
                 the classroom.
               </p>

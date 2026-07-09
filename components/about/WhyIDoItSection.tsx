@@ -44,7 +44,7 @@ export function WhyIDoItSection() {
         <h2 className="font-display text-3xl text-plum md:text-4xl">Why I Do It</h2>
         <div className="space-y-5 text-lg leading-relaxed text-muted md:text-xl">
           <p>
-            Because I believe every child deserves to be seen, heard, and held - and every adult
+            Because I believe every child deserves to be seen, heard, and held, and every adult
             deserves the tools and support to do that well.
           </p>
           <p>
@@ -58,7 +58,7 @@ export function WhyIDoItSection() {
           </p>
           <p>
             If you&apos;re looking for someone who&apos;ll meet you where you&apos;re at, hold space
-            without judgment, and offer support that actually makes a difference - you&apos;re in the
+            without judgment, and offer support that actually makes a difference, you&apos;re in the
             right place.
           </p>
           <p className="font-bold text-plum">Welcome to Mumma Chelle&apos;s.</p>

@@ -608,7 +608,7 @@ export function WellbeingProductLayout({
               <p className="font-display text-xl italic leading-relaxed text-plum md:text-2xl">
                 If you're looking for someone who'll meet you where you're at,
                 hold space without judgment, and offer support that actually
-                makes a difference - you're in the right place.
+                makes a difference, you're in the right place.
               </p>
               <p className="text-lg font-bold text-plum">
                 Welcome to Mumma Chelle's.

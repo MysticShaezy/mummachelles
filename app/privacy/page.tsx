@@ -6,7 +6,7 @@ export const metadata = createPageMetadata({
   title: "Privacy Policy",
   pathname: "/privacy",
   description:
-    "Privacy policy for Mumma Chelles - how we collect, use and protect your personal information.",
+    "Privacy policy for Mumma Chelles: how we collect, use and protect your personal information.",
 });
 
 const sectionHeadingClass =

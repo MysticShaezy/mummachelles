@@ -74,7 +74,7 @@ function WelcomeCollageVisual() {
       <div className="relative w-full translate-x-2 -translate-y-2 md:translate-x-6 md:-translate-y-5 lg:translate-x-8 lg:-translate-y-6">
         <CldImage
           src={IMAGES.sections.welcomeCollage}
-          alt="Mumma Chelles - educator reading with children and child playing with wooden toys"
+          alt="Mumma Chelles: educator reading with children and child playing with wooden toys"
           width={1200}
           height={960}
           className="h-auto w-full rounded-2xl shadow-xl"
@@ -259,7 +259,7 @@ export default function HomePage() {
                     icon: (
                       <BookHealthHeartIllustration className="mx-auto h-24 w-full max-w-[120px]" />
                     ),
-                    body: "Explore titles that help educators, carers and families understand mental health, sensory needs, trauma-informed care and holistic wellbeing - bringing insight and compassion into daily practice.",
+                    body: "Explore titles that help educators, carers and families understand mental health, sensory needs, trauma-informed care and holistic wellbeing, bringing insight and compassion into daily practice.",
                   },
                   {
                     title: "PARENTING",
@@ -411,7 +411,7 @@ export default function HomePage() {
                     COMING SOON
                   </span>
                   <h2 className="font-display text-3xl text-plum md:text-4xl">
-                    Sensory <span className="text-pink-hot">Insights</span> -
+                    Sensory <span className="text-pink-hot">Insights</span>:
                     Courses for Parents & Carers
                   </h2>
                   <p className="text-lg font-bold text-plum">
@@ -426,7 +426,7 @@ export default function HomePage() {
                     className="inline-flex rounded-full border-2 border-gold bg-white/80 px-8 py-3 text-sm font-semibold uppercase tracking-wide text-[#a07850] shadow-sm"
                     role="status"
                   >
-                    Courses - Coming Soon!
+                    Courses: Coming Soon!
                   </span>
               </div>
             </Inner>
@@ -454,7 +454,7 @@ export default function HomePage() {
                   <div className="space-y-4 text-muted">
                     <p>
                       Whether you&apos;re looking for curated resources,
-                      training, or need support on your learning journey - Mumma
+                      training, or need support on your learning journey, Mumma
                       Chelle&apos;s Place is here for you.
                     </p>
                     <p>

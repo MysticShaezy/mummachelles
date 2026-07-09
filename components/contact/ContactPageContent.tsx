@@ -84,7 +84,7 @@ export function ContactPageContent() {
                     >
                       We&apos;d love to hear from you! Whether you&apos;re after
                       recommendations, training options, or simply want to
-                      connect - just fill out the form.
+                      connect, just fill out the form.
                     </p>
                   </div>
 
