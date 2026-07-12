@@ -12,6 +12,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { createPageMetadata } from "@/lib/metadata";
 import { IMAGES } from "@/lib/images";
 import { getWpPosts, stripHtml, WP_CATEGORY_IDS, type WpPost } from "@/lib/wordpress";
+import { decodeEntities } from "@/lib/decode";
 
 /** Hardcoded slug lists — order preserved for display. */
 const BOOKS_BY_CATEGORY = {
@@ -236,7 +237,7 @@ function BookCards({ books }: { books: WpPost[] }) {
       {books.map((book) => (
         <div key={book.id} className={featuredMiniCard}>
           <p className="text-sm font-semibold leading-snug text-plum">
-            {stripHtml(book.title.rendered)}
+            {decodeEntities(stripHtml(book.title.rendered))}
           </p>
           <Link
             href={`/books/${book.slug}`}

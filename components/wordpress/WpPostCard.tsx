@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import type { WpPost } from "@/lib/wordpress";
-import { getFeaturedImage, truncateExcerpt } from "@/lib/wordpress";
+import { getFeaturedImage, truncateExcerpt, stripHtml } from "@/lib/wordpress";
+import { decodeEntities } from "@/lib/decode";
 
 type WpPostCardProps = {
   post: WpPost;
@@ -38,8 +39,9 @@ export function WpPostCard({
             target="_blank"
             rel="noopener noreferrer"
             className="transition hover:text-pink-hot"
-            dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-          />
+          >
+            {decodeEntities(stripHtml(post.title.rendered))}
+          </a>
         </h2>
         {children ?? (
           <p className="mb-4 flex-1 text-sm leading-relaxed text-muted">

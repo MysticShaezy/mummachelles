@@ -5,6 +5,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { createPageMetadata } from "@/lib/metadata";
 import { IMAGES } from "@/lib/images";
 import { getWpPosts, stripHtml, WP_CATEGORY_IDS } from "@/lib/wordpress";
+import { decodeEntities } from "@/lib/decode";
 
 export const metadata = createPageMetadata({
   title: "Toys to Love",
@@ -98,23 +99,19 @@ export default async function ToysPage() {
                     {toy._embedded?.["wp:featuredmedia"]?.[0]?.source_url && (
                       <img
                         src={toy._embedded["wp:featuredmedia"][0].source_url}
-                        alt={stripHtml(toy.title.rendered)}
+                        alt={decodeEntities(stripHtml(toy.title.rendered))}
                         className="h-48 w-full object-cover"
                       />
                     )}
                     <div className="p-6">
-                      <h3
-                        className="mb-2 font-display text-lg font-semibold text-plum"
-                        dangerouslySetInnerHTML={{ __html: toy.title.rendered }}
-                      />
-                      <p
-                        className="mb-4 text-sm leading-relaxed text-muted"
-                        dangerouslySetInnerHTML={{
-                          __html:
-                            (toy.excerpt?.rendered?.replace(/<[^>]*>/g, "") ?? "")
-                              .substring(0, 120) + "...",
-                        }}
-                      />
+                      <h3 className="mb-2 font-display text-lg font-semibold text-plum">
+                        {decodeEntities(stripHtml(toy.title.rendered))}
+                      </h3>
+                      <p className="mb-4 text-sm leading-relaxed text-muted">
+                        {decodeEntities(
+                          stripHtml(toy.excerpt?.rendered ?? "").substring(0, 120)
+                        ) + "..."}
+                      </p>
                       <span className="text-sm font-medium text-pink-hot group-hover:underline">
                         View Product →
                       </span>

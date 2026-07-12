@@ -112,14 +112,17 @@ export function groupBooksBySection(
   return grouped;
 }
 
+import { decodeEntities } from "./decode";
+
 export function stripHtml(html: string): string {
   return html.replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
 }
 
 export function truncateExcerpt(html: string | undefined, max = 140): string {
   const plain = stripHtml(html ?? "");
-  if (plain.length <= max) return plain;
-  return `${plain.slice(0, max)}...`;
+  const decoded = decodeEntities(plain);
+  if (decoded.length <= max) return decoded;
+  return `${decoded.slice(0, max)}...`;
 }
 
 export async function getWpPosts(categoryId?: number): Promise<WpPost[]> {
@@ -147,6 +150,6 @@ export function getFeaturedImage(post: WpPost): {
   if (!media?.source_url) return null;
   return {
     src: media.source_url,
-    alt: media.alt_text || stripHtml(post.title.rendered),
+    alt: media.alt_text || decodeEntities(stripHtml(post.title.rendered)),
   };
 }
