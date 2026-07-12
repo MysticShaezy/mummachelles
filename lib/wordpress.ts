@@ -134,7 +134,7 @@ export async function getWpPosts(categoryId?: number): Promise<WpPost[]> {
       url.searchParams.set("categories", String(categoryId));
     }
 
-    const res = await fetch(url.toString(), { next: { revalidate: 3600 } });
+    const res = await fetch(url.toString(), { next: { revalidate: 300 } });
     if (!res.ok) return [];
     return res.json();
   } catch {
