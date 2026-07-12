@@ -345,12 +345,6 @@ export default async function BooksPage() {
               {section.description}
             </p>
             <BookCards books={books} />
-            <Link
-              href="/books"
-              className={`inline-flex rounded-full bg-pink-hot px-8 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow-md shadow-pink-hot/25 transition hover:-translate-y-0.5 hover:bg-[#cf3f6f] hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot focus-visible:ring-offset-2 ${section.buttonOffsetClass}`}
-            >
-              {section.viewAllLabel}
-            </Link>
           </div>
         );
 

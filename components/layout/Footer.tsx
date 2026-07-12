@@ -1,10 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { SiteSocialIconButtons } from "@/components/icons/SocialIcons";
-import { CldImage } from "@/components/ui/cloudinary";
-import { IMAGES } from "@/lib/images";
 import { SITE_NAME, SITE_TAGLINE, footerColumns } from "@/lib/site";
 
 const linkColumnClass =
@@ -26,8 +25,8 @@ export function Footer() {
               href="/"
               className="inline-flex rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blush focus-visible:ring-offset-2 focus-visible:ring-offset-plum"
             >
-              <CldImage
-                src={IMAGES.brand.logoPink}
+              <Image
+                src="/images/mumma-chelles-logo-plum.png"
                 alt="Mumma Chelles"
                 width={360}
                 height={120}
