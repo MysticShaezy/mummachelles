@@ -46,12 +46,7 @@ const organizationLd = {
   name: SITE_NAME,
   url: SITE_URL,
   description: SITE_DESCRIPTION,
-  sameAs: [
-    "https://www.instagram.com/",
-    "https://www.youtube.com/",
-    "https://open.spotify.com/",
-    "mailto:hello@mummachelles.com.au",
-  ],
+  logo: "https://mummachelles.com.au/images/mumma-chelles-logo-plum.png",
 };
 
 export default function RootLayout({
