@@ -360,7 +360,7 @@ function HeaderInteractive({
         </Link>
 
         <nav
-          className="hidden min-w-0 flex-1 flex-nowrap items-center justify-center gap-0.5 overflow-visible lg:flex lg:gap-1"
+          className="hidden min-w-0 flex-1 flex-nowrap items-center justify-center gap-0.5 overflow-visible xl:flex xl:gap-1"
           aria-label="Primary"
         >
           {mainNav.map((item) => {
@@ -401,13 +401,13 @@ function HeaderInteractive({
         <div className="flex shrink-0 items-center gap-2">
           <Link
             href="/members"
-            className="hidden whitespace-nowrap rounded-full border border-plum px-3 py-2 text-[10px] font-semibold uppercase tracking-wide text-plum transition hover:bg-pink-pale focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot lg:inline-flex lg:text-xs"
+            className="hidden whitespace-nowrap rounded-full border border-plum px-3 py-2 text-[10px] font-semibold uppercase tracking-wide text-plum transition hover:bg-pink-pale focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot xl:inline-flex xl:text-xs"
           >
             Members Login
           </Link>
           <button
             type="button"
-            className="inline-flex items-center rounded-full border border-plum px-3 py-2 text-plum focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot lg:hidden"
+            className="inline-flex items-center rounded-full border border-plum px-3 py-2 text-plum focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot xl:hidden"
             onClick={() => setOpenMenu(true)}
             aria-expanded={openMenu}
             aria-controls="mobile-navigation"
@@ -424,7 +424,7 @@ function HeaderInteractive({
         {openMenu ? (
           <motion.div
             id="mobile-navigation"
-            className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm lg:hidden"
+            className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm xl:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
