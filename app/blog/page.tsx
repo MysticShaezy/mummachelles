@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { WpPostCard } from "@/components/wordpress/WpPostCard";
+import { BlogPostsSection } from "@/components/blog/BlogPostsSection";
 import { InViewSection } from "@/components/sections/InViewSection";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { createPageMetadata } from "@/lib/metadata";
@@ -72,47 +72,30 @@ export default async function BlogPage() {
         </InViewSection>
       </FullBleed>
 
-      <FullBleed bgClassName="bg-white">
-        <InViewSection className="relative py-12 md:py-14">
+      <FullBleed bgClassName="bg-blush">
+        <InViewSection className="py-16 md:py-24">
           <Inner>
-            <div className="mx-auto max-w-3xl space-y-6 text-center text-sm leading-relaxed text-muted md:text-base">
-              <p>
-                Some of the book links on this page direct you to our curated
-                Amazon storefront. As an Amazon Associate, Mumma Chelle earns from
-                qualifying purchases, at no extra cost to you.
-              </p>
-              <p>
-                Every book recommended here has been carefully selected through a
-                blend of professional experience, lived insight, and a whole lot of
-                heart. These are titles we truly believe in, chosen to support,
-                uplift, and spark meaningful conversations in your home,
-                classroom, or community.
-              </p>
-              <p>
-                Thank you for supporting this space and the work we do by
-                purchasing through these links.
-              </p>
-            </div>
+            <BlogPostsSection posts={posts} />
           </Inner>
         </InViewSection>
       </FullBleed>
 
-      <FullBleed bgClassName="bg-blush">
-        <InViewSection className="py-16 md:py-24">
+      <FullBleed bgClassName="bg-white">
+        <div className="py-8">
           <Inner>
-            <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {posts.length > 0 ? (
-                posts.map((post) => (
-                  <WpPostCard key={post.id} post={post} ctaLabel="Read article" />
-                ))
-              ) : (
-                <p className="col-span-full text-center text-muted">
-                  Blog posts coming soon.
-                </p>
-              )}
-            </div>
+            <p className="mx-auto max-w-3xl text-center text-sm text-muted">
+              Some of the book links on this page direct you to our curated
+              Amazon storefront. As an Amazon Associate, Mumma Chelle earns from
+              qualifying purchases, at no extra cost to you. Every book recommended
+              here has been carefully selected through a blend of professional
+              experience, lived insight, and a whole lot of heart. These are titles
+              we truly believe in, chosen to support, uplift, and spark meaningful
+              conversations in your home, classroom, or community. Thank you for
+              supporting this space and the work we do by purchasing through these
+              links.
+            </p>
           </Inner>
-        </InViewSection>
+        </div>
       </FullBleed>
     </div>
   );

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { ReactNode } from "react";
 import type { WpPost } from "@/lib/wordpress";
 import { getFeaturedImage, truncateExcerpt, stripHtml } from "@/lib/wordpress";
@@ -18,20 +19,22 @@ export function WpPostCard({
 
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-pink-soft bg-white transition duration-300 hover:-translate-y-1 hover:shadow-lg">
-      {image && (
-        <a
-          href={post.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block shrink-0"
-        >
-          <img
+      <a
+        href={post.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative block shrink-0 aspect-video overflow-hidden bg-blush"
+      >
+        {image ? (
+          <Image
             src={image.src}
             alt={image.alt}
-            className="h-48 w-full object-cover"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
-        </a>
-      )}
+        ) : null}
+      </a>
       <div className="flex flex-1 flex-col p-6">
         <h2 className="mb-2 font-display text-lg font-semibold text-plum">
           <a
