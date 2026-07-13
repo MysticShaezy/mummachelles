@@ -21,8 +21,6 @@ export function WpPostCard({
     <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-pink-soft bg-white transition duration-300 hover:-translate-y-1 hover:shadow-lg">
       <a
         href={post.link}
-        target="_blank"
-        rel="noopener noreferrer"
         className="relative block shrink-0 aspect-video overflow-hidden bg-blush"
       >
         {image ? (
@@ -39,8 +37,6 @@ export function WpPostCard({
         <h2 className="mb-2 font-display text-lg font-semibold text-plum">
           <a
             href={post.link}
-            target="_blank"
-            rel="noopener noreferrer"
             className="transition hover:text-pink-hot"
           >
             {decodeEntities(stripHtml(post.title.rendered))}
@@ -53,8 +49,6 @@ export function WpPostCard({
         )}
         <a
           href={post.link}
-          target="_blank"
-          rel="noopener noreferrer"
           className="text-sm font-medium text-pink-hot hover:underline"
         >
           {ctaLabel} →
