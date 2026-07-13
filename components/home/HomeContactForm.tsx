@@ -23,17 +23,22 @@ export function HomeContactForm() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Accept": "application/json",
         },
         body: JSON.stringify(data),
       });
 
-      if (response.ok) {
+      const result = await response.json();
+
+      if (result.success) {
         setStatus("success");
         e.currentTarget.reset();
       } else {
+        console.error("Web3Forms error:", result);
         setStatus("error");
       }
     } catch (error) {
+      console.error("Contact form submission error:", error);
       setStatus("error");
     }
   };
