@@ -1,15 +1,48 @@
 "use client";
 
 import { Mail } from "lucide-react";
+import { useState } from "react";
 
 export function HomeContactForm() {
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus("loading");
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      access_key: "71d49c63-c46f-4138-92a1-ebafcd73945a",
+      name: formData.get("fullName"),
+      email: formData.get("email"),
+      message: formData.get("message"),
+    };
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        e.currentTarget.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      setStatus("error");
+    }
+  };
+
   return (
     <form
       className="relative z-[1] space-y-5 rounded-2xl border border-pink-soft bg-white p-6 shadow-lg shadow-pink-soft/20 md:p-8"
       noValidate={false}
-      onSubmit={(e) => {
-        e.preventDefault();
-      }}
+      onSubmit={handleSubmit}
     >
       <label className="grid gap-2 text-sm font-medium text-plum">
         Full Name
@@ -58,10 +91,23 @@ export function HomeContactForm() {
       </label>
       <button
         type="submit"
-        className="w-full rounded-full bg-pink-hot px-6 py-3 text-sm font-semibold uppercase tracking-wider text-white transition hover:bg-[#cf3f6f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+        disabled={status === "loading"}
+        className="w-full rounded-full bg-pink-hot px-6 py-3 text-sm font-semibold uppercase tracking-wider text-white transition hover:bg-[#cf3f6f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot focus-visible:ring-offset-2 focus-visible:ring-offset-white disabled:cursor-not-allowed disabled:opacity-60"
       >
-        SEND
+        {status === "loading" ? "SENDING..." : "SEND"}
       </button>
+
+      {status === "success" ? (
+        <p className="rounded-xl bg-pink-pale px-4 py-3 text-center text-sm text-plum">
+          Thanks for reaching out! Michelle will get back to you soon.
+        </p>
+      ) : null}
+
+      {status === "error" ? (
+        <p className="rounded-xl bg-pink-pale px-4 py-3 text-center text-sm text-plum">
+          Something went wrong. Please email michelle@mummachelles.com.au directly.
+        </p>
+      ) : null}
     </form>
   );
 }

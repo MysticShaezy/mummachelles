@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
 import { SiteSocialIconButtons } from "@/components/icons/SocialIcons";
 import { SITE_NAME, SITE_TAGLINE, footerColumns } from "@/lib/site";
 
@@ -13,7 +12,6 @@ const headingClass =
   "mb-4 text-sm font-semibold uppercase tracking-widest text-gold";
 
 export function Footer() {
-  const [newsletterSubmitted, setNewsletterSubmitted] = useState(false);
   const [linksColumn, supportColumn] = footerColumns;
 
   return (
@@ -72,37 +70,10 @@ export function Footer() {
               Be part of our community and never miss an update! Get access to new courses,
               curated resources, and thoughtful content delivered straight to your inbox.
             </p>
-            <form
-              noValidate={false}
-              onSubmit={(event) => {
-                event.preventDefault();
-                setNewsletterSubmitted(true);
-              }}
-            >
-              <label htmlFor="footer-newsletter-email" className="sr-only">
-                Email address
-              </label>
-              <input
-                id="footer-newsletter-email"
-                name="newsletter-email"
-                type="email"
-                placeholder="your@email.com"
-                autoComplete="email"
-                required
-                className="mt-3 w-full rounded-full border border-white/20 bg-transparent px-4 py-2 text-sm text-white placeholder:text-white/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30 focus-visible:ring-offset-2 focus-visible:ring-offset-plum"
-              />
-              <button
-                type="submit"
-                className="mt-2 w-full rounded-full bg-pink-hot py-2 text-sm font-semibold uppercase tracking-wider text-white transition hover:bg-[#cf3f6f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:ring-offset-plum"
-              >
-                SUBSCRIBE NOW
-              </button>
-              {newsletterSubmitted ? (
-                <p className="mt-2 text-xs text-white/50">
-                  Thanks. Newsletter automation activates after SMTP approvals.
-                </p>
-              ) : null}
-            </form>
+            <p className="mt-3 text-sm text-white/50">
+              Newsletter coming soon. Follow us on social media to stay 
+              connected in the meantime.
+            </p>
           </div>
         </div>
 

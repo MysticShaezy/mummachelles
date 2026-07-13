@@ -4,17 +4,46 @@ import { Mail } from "lucide-react";
 import { useState } from "react";
 
 export function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "queued">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus("loading");
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      access_key: "71d49c63-c46f-4138-92a1-ebafcd73945a",
+      name: formData.get("name"),
+      email: formData.get("email"),
+      message: formData.get("message"),
+    };
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        e.currentTarget.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      setStatus("error");
+    }
+  };
 
   return (
     <form
       className="relative z-10 space-y-6 rounded-2xl border border-pink-soft/80 bg-white p-8 shadow-lg shadow-plum/10 md:p-10"
       aria-describedby="contact-intro"
       noValidate={false}
-      onSubmit={(e) => {
-        e.preventDefault();
-        setStatus("queued");
-      }}
+      onSubmit={handleSubmit}
     >
       <label className="grid gap-2 text-sm font-semibold text-plum">
         Full Name
@@ -70,15 +99,21 @@ export function ContactForm() {
 
       <button
         type="submit"
-        className="w-full rounded-xl bg-pink-hot px-6 py-4 text-sm font-bold uppercase tracking-[0.12em] text-white shadow-md shadow-pink-hot/25 transition hover:bg-[#cf3f6f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+        disabled={status === "loading"}
+        className="w-full rounded-xl bg-pink-hot px-6 py-4 text-sm font-bold uppercase tracking-[0.12em] text-white shadow-md shadow-pink-hot/25 transition hover:bg-[#cf3f6f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot focus-visible:ring-offset-2 focus-visible:ring-offset-white disabled:cursor-not-allowed disabled:opacity-60"
       >
-        SEND
+        {status === "loading" ? "SENDING..." : "SEND"}
       </button>
 
-      {status === "queued" ? (
+      {status === "success" ? (
         <p className="rounded-xl bg-pink-pale px-4 py-3 text-center text-sm text-plum">
-          Thanks for reaching out. This form is not yet connected to email -
-          your message was not sent.
+          Thanks for reaching out! Michelle will get back to you soon.
+        </p>
+      ) : null}
+
+      {status === "error" ? (
+        <p className="rounded-xl bg-pink-pale px-4 py-3 text-center text-sm text-plum">
+          Something went wrong. Please email michelle@mummachelles.com.au directly.
         </p>
       ) : null}
     </form>
