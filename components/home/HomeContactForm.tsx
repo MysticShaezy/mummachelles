@@ -8,9 +8,10 @@ export function HomeContactForm() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
     setStatus("loading");
 
-    const formData = new FormData(e.currentTarget);
+    const formData = new FormData(form);
     const data = {
       access_key: "71d49c63-c46f-4138-92a1-ebafcd73945a",
       name: formData.get("fullName"),
@@ -32,7 +33,7 @@ export function HomeContactForm() {
 
       if (result.success) {
         setStatus("success");
-        e.currentTarget.reset();
+        form.reset();
       } else {
         console.error("Web3Forms error:", result);
         setStatus("error");
