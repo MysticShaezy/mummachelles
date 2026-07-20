@@ -90,7 +90,8 @@ export default function HomePage() {
     <ShaderBackground>
       <div className="-mx-4 overflow-x-hidden pb-8 sm:-mx-6 lg:-mx-10">
         <FullBleed bgClassName="bg-transparent">
-          <InViewSection className="relative flex min-h-screen flex-col pb-24 md:pb-28">
+          {/* No fade-in on the hero: opacity:0 delays LCP until JS + animation. */}
+          <section className="relative flex min-h-screen flex-col pb-24 md:pb-28">
             <Inner className="flex w-full flex-1 flex-col justify-center py-6 md:py-10">
               <div className="relative grid gap-12 lg:grid-cols-2 lg:items-center">
                 <div className="pointer-events-none absolute right-4 top-8 flex gap-2 md:right-10 md:top-12 lg:top-16">
@@ -121,22 +122,31 @@ export default function HomePage() {
                     Explore Book Recommendations
                   </Link>
                 </div>
-                <ParallaxLite className="relative z-[1]">
-                  <div className={`${liftSurface} relative aspect-[4/5] max-h-[520px] overflow-hidden p-0`}>
+                <div className="relative z-[1]">
+                  <div
+                    className={`${liftSurface} relative aspect-[4/5] max-h-[520px] overflow-hidden p-0`}
+                  >
                     <CldImage
                       src={IMAGES.photography.michelleHero}
                       alt="Michelle Thomas, Mumma Chelles"
                       width={600}
                       height={800}
                       className="h-full w-full object-cover"
-                      sizes="(max-width: 1024px) 92vw, 40vw"
+                      sizes="(max-width: 640px) 92vw, (max-width: 1024px) 50vw, 480px"
+                      quality={75}
+                      format="auto"
+                      crop="fill"
+                      gravity="auto"
+                      aspectRatio="4:5"
+                      dpr="auto"
                       priority
+                      fetchPriority="high"
                     />
                   </div>
-                </ParallaxLite>
+                </div>
               </div>
             </Inner>
-          </InViewSection>
+          </section>
         </FullBleed>
 
         <FullBleed bgClassName="bg-white/80">

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Dancing_Script, Lato, Playfair_Display } from "next/font/google";
+import { Lato, Playfair_Display } from "next/font/google";
 
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { Footer } from "@/components/layout/Footer";
@@ -15,6 +15,7 @@ const displayFont = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
+  preload: true,
 });
 
 const bodyFont = Lato({
@@ -22,12 +23,7 @@ const bodyFont = Lato({
   weight: ["400", "700"],
   variable: "--font-body",
   display: "swap",
-});
-
-const logoFont = Dancing_Script({
-  subsets: ["latin"],
-  variable: "--font-logo",
-  display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -57,9 +53,15 @@ export default function RootLayout({
   return (
     <html
       lang="en-AU"
-      className={`${displayFont.variable} ${bodyFont.variable} ${logoFont.variable} h-full`}
+      className={`${displayFont.variable} ${bodyFont.variable} h-full`}
     >
       <body className="flex min-h-full flex-col bg-blush font-body text-plum antialiased">
+        <link
+          rel="preconnect"
+          href="https://res.cloudinary.com"
+          crossOrigin="anonymous"
+        />
+        <link rel="dns-prefetch" href="https://res.cloudinary.com" />
         <GoogleAnalytics />
         <JsonLd data={organizationLd} />
         <ScrollToTop />

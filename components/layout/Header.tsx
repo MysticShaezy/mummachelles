@@ -289,7 +289,9 @@ function LogoMark() {
         width={360}
         height={120}
         className="h-24 w-auto object-contain"
-        priority
+        sizes="180px"
+        quality={70}
+        format="auto"
       />
     </span>
   );
