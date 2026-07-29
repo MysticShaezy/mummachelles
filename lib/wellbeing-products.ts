@@ -207,7 +207,7 @@ export const FEEL_CALM_CONTENT = {
     buttons: [
       {
         label: "Australia",
-        href: "https://nskn.co/8xXngw",
+        href: "https://www.nuskin.com/au/en/personal-offer/AS00429081?pitchId=-OpQw__ZyqIrJhlBw_dz&t=1785281925084",
       },
       { label: "United States", href: "https://nskn.co/oM4T68" },
       {
@@ -319,7 +319,7 @@ export const NIGHT_TIME_CONTENT = {
     buttons: [
       {
         label: "Australia",
-        href: "https://nskn.co/GyWmpP",
+        href: "https://www.nuskin.com/au/en/personal-offer/AS00429081?pitchId=-OqtE0LYUuqDzB7XAFlr",
       },
       { label: "United States", href: "https://nskn.co/DmlTvb" },
       {
@@ -452,7 +452,10 @@ export const Y_SPAN_CONTENT = {
   },
   purchase: {
     buttons: [
-      { label: "Australia", href: "https://nskn.co/dTtb12" },
+      {
+        label: "Australia",
+        href: "https://www.nuskin.com/au/en/personal-offer/AS00429081?pitchId=-OqtAUEuYP4DcH2GXeLq",
+      },
       { label: "United States", href: "https://nskn.co/rpwkvz" },
       {
         label: "Singapore",

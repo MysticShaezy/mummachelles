@@ -106,7 +106,7 @@ export default function AboutPage() {
                     families, and educators.
                   </p>
                   <p>
-                    With over 36 years&apos; experience in special education,
+                    With over 37 years&apos; experience in special education,
                     family support, and complex care supports. I&apos;ve built a
                     career around connection, compassion, and community.
                   </p>
